@@ -16,8 +16,13 @@ class User extends Model {
         userInstance.password = await Hash.make(userInstance.password)
       }
     })
-  }
 
+  }
+  
+  properties () {
+    return this.hasMany('App/Models/Property');
+  }
+  
   /**
    * A relationship on tokens is required for auth to
    * work. Since features like `refreshTokens` or
