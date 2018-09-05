@@ -4,10 +4,10 @@ const Schema = use('Schema')
 
 class ImageSchema extends Schema {
   up () {
-    this.create('images', (table) => {
+    this.create('images', table => {
       table.increments()
       table
-        .interger('property_id')
+        .integer('property_id')
         .unsigned()
         .references('id')
         .inTable('properties')
